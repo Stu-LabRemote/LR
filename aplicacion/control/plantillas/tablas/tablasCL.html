@@ -1,0 +1,25 @@
+{% load static %}
+{% block tablas %}
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Distancia (cm)</th>
+                <th>Tiempo (seg)</th>
+            </tr>
+        </thead> 
+        <tbody>
+            {% for c in DatosCL %}
+            <tr>
+                <td>{{c.id}}</td>
+                <td>{{c.distancia}}</td>
+                <td>{{c.tiempo}}</td>
+                <td><a href={% url "ReinicioCL" c.id %} class="btn btn-danger btn-block text-white">Reiniciar</a></td>
+            </tr>
+
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

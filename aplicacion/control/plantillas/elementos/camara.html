@@ -1,0 +1,45 @@
+{% load static %}
+{% block camara %}
+    <div class = "borde">
+        <video id = "video" playsinline autoplay></video>
+    </div>
+    <canvas id="canvas" width="100px" height="50px"></canvas>
+
+    <div id="mensaje" class="mensaje">
+
+<script>
+    'use strict'
+    document.getElementById('canvas').style.displa = 'none';
+    const video = document.getElementById ('video') ;
+    const cavas = document.getElementById('canvas');
+
+    const constraints ={
+        audio: false,
+        video: {
+            width: 750, height: 600
+        }
+    };
+
+    async function init (){
+        try{
+            const stream = await
+            navigator.mediaDevices.getUserMedia(constraints);
+            handleSuccess(stream);
+        } catch (e){
+            $("#mensaje").html("Debe de seleccionar un dispositivo y permitir el acceso al navegador. Presione F5 o Refresh en el navegador.<br clear='all'><brclear='all'>");
+        }
+    }
+
+    function handleSuccess (stream){
+        window.stream = stream;
+        video.srcObject =stream;
+    }
+
+    init()
+    var context =canvas.getContext('2d');
+
+</script>
+
+
+
+{% endblock %}

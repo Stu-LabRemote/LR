@@ -1,0 +1,50 @@
+version: '3'
+services:
+  db:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: '12345'
+      MYSQL_DATABASE: root
+      MYSQL_PASSWORD: '12345'
+    ports:
+      - "3306:3306"
+    networks:
+      - mynet
+
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes: 
+      - .:/proyecto
+    ports:
+      - '8000:8000'
+    depends_on:
+      - db
+    networks:
+      - mynet
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_USER: root
+      PMA_PASSWORD: '12345'
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    networks:
+      - mynet
+
+
+  node-red:
+    image: nodered/node-red
+    ports:
+      - "1880:1880"
+    volumes:
+      - ./node-red-data:/data
+    networks:
+      - mynet
+
+
+networks:
+  mynet:

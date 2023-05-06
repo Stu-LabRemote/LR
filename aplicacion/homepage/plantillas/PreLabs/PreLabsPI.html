@@ -1,0 +1,52 @@
+{% load static %}
+{% block PreLabs %}
+<div class="container-fluid">
+    <div class = "row" >
+        <div class="col-md-3" >
+            <div class="card card-primary" bis_skin_checked="1">
+                <div class="card-header" bis_skin_checked="1">
+                    <h3 class="card-title">Informacion</h3>
+                </div>
+            
+                <div class="card-body" bis_skin_checked="1">
+
+                    <strong><i class="fas fa-calendar-alt"></i> Fecha de Inicio</strong>
+                    <p class="text-muted">
+                        15/05/2022
+                    </p>
+                    <hr>
+
+                    <strong><i class="fas fa-clock"></i> Hora de inicio</strong>
+                    <p class="text-muted">3:00pm</p>
+                    <hr>
+
+                    <strong><i class="fa fa-file"></i> Recursos</strong>
+                    <p class="text-muted">
+                        <a href="#"> PlanoInclinado.pdf</a>
+                    </p>
+                    <hr>
+                    
+                    <strong><i class="text-center"></i> Ingresa el Codigo de Acceso</strong>
+                    <input type="text" id="inputName" class="form-control text-center" placeholder="Codigo">
+                    <a href="/page2/home/infoPI/controlPI" class="btn btn-primary btn-block">Acceder</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-9" >
+            <div class="card card-primary" >
+                <div class="card-header">
+                    <h3 class="card-title">Resumen</h3>
+                </div>
+                <div class="card-body">
+                    <p class="text-muted">
+                        Las pendientes o los planos inclinados son superficies diagonales sobre las cuales los objetos pueden estar en reposo, deslizarse o rodar hacia arriba o hacia abajo. n la mayoría de los casos, resolvemos problemas que involucran fuerzas al usar la segunda ley de Newton para las direcciones vertical y horizontal. Pero para los planos inclinados, típicamente estamos preocupados con el movimiento paralelo a la superficie del plano inclinado, así que a menudo es más útil resolver la segunda ley de Newton para las direcciones paralela y perpendicular a la superficie inclinada.
+                    </p>
+                    <img class="card-img-top" src="{% static 'lib/adminlte-3.0.4/img/plano-inclinado.jpg' %}" alt="Card image cap">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

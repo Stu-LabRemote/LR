@@ -1,0 +1,52 @@
+{% load static %}
+{% block PreLabs %}
+<div class="container-fluid">
+    <div class = "row" >
+        <div class="col-md-3" >
+            <div class="card card-primary" bis_skin_checked="1">
+                <div class="card-header" bis_skin_checked="1">
+                    <h3 class="card-title">Informacion</h3>
+                </div>
+            
+                <div class="card-body" bis_skin_checked="1">
+
+                    <strong><i class="fas fa-calendar-alt"></i> Fecha de Inicio</strong>
+                    <p class="text-muted">
+                        15/05/2022
+                    </p>
+                    <hr>
+
+                    <strong><i class="fas fa-clock"></i> Hora de inicio</strong>
+                    <p class="text-muted">3:00pm</p>
+                    <hr>
+
+                    <strong><i class="fa fa-file"></i> Recursos</strong>
+                    <p class="text-muted">
+                        <a href="#"> CaidaLibre.pdf</a>
+                    </p>
+                    <hr>
+                    
+                    <strong><i class="text-center"></i> Ingresa el Codigo de Acceso</strong>
+                    <input type="text" id="inputName" class="form-control text-center" placeholder="Codigo">
+                    <a href="/page2/home/infoCL/controlCL" class="btn btn-primary btn-block">Acceder</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-9" >
+            <div class="card card-primary" >
+                <div class="card-header">
+                    <h3 class="card-title">Resumen</h3>
+                </div>
+                <div class="card-body">
+                    <p class="text-muted">
+                        En física, se denomina caída libre al movimiento de un cuerpo bajo la acción exclusiva de un campo gravitatorio. Esta definición formal excluye a todas las caídas reales influenciadas en mayor o menor medida por la resistencia aerodinámica del aire, así como a cualquier otra que tenga lugar en el seno de un fluido; sin embargo, es frecuente también referirse coloquialmente a éstas como caídas libres, aunque los efectos de la viscosidad del medio no sean por lo general despreciables. El concepto es aplicable también a objetos en movimiento vertical ascendente sometidos a la acción desaceleradora de la gravedad, como un disparo vertical; o a cualquier objeto (satélites naturales o artificiales, planetas, etc.) en órbita alrededor de un cuerpo celeste. Otros sucesos referidos también como caída libre lo constituyen las trayectorias geodésicas en el espacio-tiempo descritas en la teoría de la relatividad general. Ejemplos de caída libre deportiva los encontramos en actividades basadas en dejarse caer una persona a través de la atmósfera sin sustentación alar ni de paracaídas durante un cierto trayecto.
+                    </p>
+                    <img class="card-img-top" src="{% static 'lib/adminlte-3.0.4/img/caida-libre.jpg' %}" alt="Card image cap">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+#include <Arduino.h>
+
+#include <ESP8266WiFiMulti.h>
+#include <ESP8266HTTPClient.h>
+
+const char* ssid = "UNIAJC_ADMINI";
+const char* password = "Un14jc.adm*";
+
+String dato1 = "jelouda"
+
+void setup (){
+    delay(10);
+    Serial.begin(115200);
+
+    WiFi.begin(ssid, password);
+    while(WiFi.status() !=WL_CONNECTED){
+        delay(500);
+        Serial.print(".");
+    }
+
+    Serial.print("Conectado con exito, mi IP es:  ");
+    Serial.Println(WiFi.localIP());
+}
+
+
+void loop(){
+    if(WiFi.status()== WL_CONNECTED){
+        HTTPClient https; 
+        String datos_a_enviar= "?user=" + dato1;
+        
+    }
+
+}

@@ -1,0 +1,52 @@
+{% load static %}
+{% block PreLabs %}
+<div class="container-fluid">
+    <div class = "row" >
+        <div class="col-md-3" >
+            <div class="card card-primary" bis_skin_checked="1">
+                <div class="card-header" bis_skin_checked="1">
+                    <h3 class="card-title">Informacion</h3>
+                </div>
+            
+                <div class="card-body" bis_skin_checked="1">
+
+                    <strong><i class="fas fa-calendar-alt"></i> Fecha de Inicio</strong>
+                    <p class="text-muted">
+                        15/05/2022
+                    </p>
+                    <hr>
+
+                    <strong><i class="fas fa-clock"></i> Hora de inicio</strong>
+                    <p class="text-muted">3:00pm</p>
+                    <hr>
+
+                    <strong><i class="fa fa-file"></i> Recursos</strong>
+                    <p class="text-muted">
+                        <a href="#"> infoMR.pdf</a>
+                    </p>
+                    <hr>
+                    
+                    <strong><i class="text-center"></i> Ingresa el Codigo de Acceso</strong>
+                    <input type="text" id="inputName" class="form-control text-center" placeholder="Codigo">
+                    <a href="/page2/home/infoMR/controlMR" class="btn btn-primary btn-block">Acceder</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-9" >
+            <div class="card card-primary" >
+                <div class="card-header">
+                    <h3 class="card-title">Resumen</h3>
+                </div>
+                <div class="card-body">
+                    <p class="text-muted">
+                        El Movimiento rectilíneo es un movimiento cuya trayectoria es una línea recta. Si el móvil no cambia de sentido, la única variación que puede experimentar la velocidad es la de su módulo. Esto permite clasificar el movimiento rectilíneo en movimiento rectilíneo y uniforme, si el módulo de la velocidad no varía, y movimiento rectilíneo uniformemente variado si el módulo de la velocidad varía de manera constante en el transcurso del tiempo. Si se considera que el movimiento rectilíneo tiene lugar en una sola dimensión, la posición del móvil en cualquier instante queda determinada por el módulo del vector de posición.
+                    </p>
+                    <img class="card-img-top" src="{% static 'lib/adminlte-3.0.4/img/movimiento-rectilineo.jpg' %}" alt="Card image cap">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
