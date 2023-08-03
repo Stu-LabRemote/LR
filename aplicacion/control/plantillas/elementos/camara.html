@@ -1,45 +1,41 @@
 {% load static %}
 {% block camara %}
-    <div class = "borde">
-        <video id = "video" playsinline autoplay></video>
+
+    <div class="borde">
+        <video id="video" playsinline autoplay></video>
     </div>
-    <canvas id="canvas" width="100px" height="50px"></canvas>
+    <canvas id="canvas" width="200px" height="100px"></canvas>
 
-    <div id="mensaje" class="mensaje">
+    <div id="mensaje" class="mensaje"></div> <!-- Quitamos el contenido dentro del div de mensaje -->
 
-<script>
-    'use strict'
-    document.getElementById('canvas').style.displa = 'none';
-    const video = document.getElementById ('video') ;
-    const cavas = document.getElementById('canvas');
+    <script>
+        'use strict'
+        document.getElementById('canvas').style.display = 'none';
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
 
-    const constraints ={
-        audio: false,
-        video: {
-            width: 750, height: 600
+        const constraints = {
+            audio: false,
+            video: {
+                width: 750, height: 330
+            }
+        };
+
+        async function init() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia(constraints);
+                handleSuccess(stream);
+            } catch (e) {
+                // Eliminamos el código que modifica el div mensaje
+            }
         }
-    };
 
-    async function init (){
-        try{
-            const stream = await
-            navigator.mediaDevices.getUserMedia(constraints);
-            handleSuccess(stream);
-        } catch (e){
-            $("#mensaje").html("Debe de seleccionar un dispositivo y permitir el acceso al navegador. Presione F5 o Refresh en el navegador.<br clear='all'><brclear='all'>");
+        function handleSuccess(stream) {
+            window.stream = stream;
+            video.srcObject = stream;
         }
-    }
 
-    function handleSuccess (stream){
-        window.stream = stream;
-        video.srcObject =stream;
-    }
-
-    init()
-    var context =canvas.getContext('2d');
-
-</script>
-
-
-
+        init();
+        var context = canvas.getContext('2d');
+    </script>
 {% endblock %}

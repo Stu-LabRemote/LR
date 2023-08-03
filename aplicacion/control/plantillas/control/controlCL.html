@@ -33,70 +33,71 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="card card-primary">
-                                <div class="card-header">
-                                    <h3 class="card-title">Camara</h3>
-                                </div>
-                                <div class="card-body">
-                                    {% block Camara %}
-                                    {% include 'aplicacion/control/plantillas/elementos/camara.html' %}
-                                    {% endblock %}
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="container-fluid" style="height: 500px;">
-                            <div class="row h-100">
-                                <div class="col-md-12">
-                                    <div class="card card-primary h-100">
-                                        <div class="card-header">
-                                            <h3 class="card-title">Control</h3>
-                                        </div>
-                                        <div class="card-body h-100 w-100">
-                                            <style>
-                                                body {
-                                                    min-height: 100vh;
-                                                    display: flex;
-                                                    flex-direction: column;
-                                                }
-                                                
-                                                iframe {
-                                                    flex: 1;
-                                                    width: 100%;
-                                                    height: 95%;
-                                                    border: 2px solid rgb(0, 0, 0);
-                                                }
-                                            </style>
-        
-                                            <a href=http://localhost:1880/ui/#!/0?socketid=BZboSCU-sHLbU0VfAAAA target="miiframe">ABRIR CONTROL LR</a>
-                                        
-                                            <iframe name="miiframe"></iframe>
-                                        </div>
+                    <div class="container-fluid">
+                        <div class="row h-100 my-3">
+                            <div class="col-md-8"> <!-- Cambiamos col-md-8 por col-md-6 para que ocupe la mitad del ancho -->
+                                <div class="card card-primary h-100"> <!-- Quitamos la clase h-50 para que la card ocupe toda la altura -->
+                                    <div class="card-header">
+                                        <h3 class="card-title">Camara</h3>
+                                    </div>
+                                    <div class="card-body h-100 w-100">
+                                        {% block Camara %}
+                                        {% include 'aplicacion/control/plantillas/elementos/camara.html' %}
+                                        {% endblock %}
+                                    </div>
+                                </div>
+                            </div>                            
+                            <div class="col-md-4">
+                                <div class="card card-primary h-100">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Control</h3>
+                                    </div>
+                                    <div class="card-body h-100 w-100" style="margin: 1px; padding: 1px;"> <!-- Ajusta los valores de los márgenes y el relleno según tus preferencias -->
+                                        <style>
+                                            body {
+                                                min-height: 100vh;
+                                                display: flex;
+                                                flex-direction: column;
+                                            }
+                                            
+                                            iframe {
+                                                flex: 1;
+                                                width: 100%;
+                                                height: 95%;
+                                                border: 1px solid rgb(0, 0, 0);
+                                            }
+                                        </style>
+                                        <a href="http://localhost:1880/ui/#!/0?socketid=BZboSCU-sHLbU0VfAAAA" target="miiframe">ABRIR CONTROL LR</a>
+                                        <iframe name="miiframe"></iframe>
                                     </div>
                                 </div>
                             </div>
+                            
                         </div>
+                    </div>
+                    
     
                         <div class="container-fluid" bis_skin_checked="1">
                             <div class="row h-100 my-3">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="card card-primary">
                                         <div class="card-header">
                                             <h3 class="card-title">Tabla de Datos</h3>
                                         </div>
                                         <div class="card-body">
+                                            <img src="{% static 'img/tabla1.jpeg' %}" width="340" height="400"/>
                                         </div>
                                     </div>
                                 </div>
         
-                                <div class="col-md-6">
+                                <div class="col-md-8">
                                     <div class="card card-primary">
                                         <div class="card-header">
                                             <h3 class="card-title">Grafica y vs t</h3>
                                         </div>
                                         <div class="card-body">
+                                            <img src="{% static 'img/grafica1.jpeg' %}" width="750" height="400"/>
                                         </div>
                                     </div>
                                 </div>
