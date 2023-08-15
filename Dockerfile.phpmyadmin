@@ -1,0 +1,9 @@
+# Utiliza la imagen oficial de phpMyAdmin como base
+FROM phpmyadmin/phpmyadmin
+
+# Define las variables de entorno para configurar el usuario y contraseña de phpMyAdmin
+ENV PMA_USER=root
+ENV PMA_PASSWORD=12345
+
+# Etiqueta la imagen con tu nombre de usuario y tag
+LABEL maintainer="jha15"
