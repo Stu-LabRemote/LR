@@ -1,9 +1,0 @@
-# Utiliza la imagen oficial de MySQL como base
-FROM mysql:latest
-
-# Define las variables de entorno para configurar el usuario, contraseña y base de datos
-ENV MYSQL_ROOT_PASSWORD=12345
-ENV MYSQL_DATABASE=root
-ENV MYSQL_PASSWORD=12345
-
-LABEL maintainer="jha15"
