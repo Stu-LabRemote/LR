@@ -7,7 +7,7 @@ services:
       MYSQL_DATABASE: root
       MYSQL_PASSWORD: '12345'
     ports:
-      - "3306:3306"
+      - '8000:8000'
     networks:
       - mynet
 
@@ -29,7 +29,7 @@ services:
       PMA_USER: root
       PMA_PASSWORD: '12345'
     ports:
-      - "8080:80"
+      - '8000:8000'
     depends_on:
       - db
     networks:
@@ -39,7 +39,7 @@ services:
   node-red:
     image: nodered/node-red
     ports:
-      - "1880:1880"
+      - '8000:8000'
     volumes:
       - ./node-red-data:/data
     networks:
