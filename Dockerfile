@@ -26,5 +26,3 @@ RUN python -m pip install -r requirements.txt
 RUN apk add --no-cache mariadb-connector-c-dev mariadb-dev build-base libffi-dev openssl-dev mysql-client
 
 COPY . /proyecto/
-
-CMD ["node-red"]
