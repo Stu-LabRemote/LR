@@ -1,6 +1,0 @@
-# Utiliza la imagen oficial de Node-RED como base
-FROM nodered/node-red
-
-# Agrega cualquier configuración o personalización adicional que necesites
-
-LABEL maintainer="jha15"
