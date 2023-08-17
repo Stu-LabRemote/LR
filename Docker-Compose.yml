@@ -7,7 +7,7 @@ services:
       MYSQL_DATABASE: root
       MYSQL_PASSWORD: '12345'
     ports:
-      - '8000:8000'
+      - '8000'
     networks:
       - mynet
 
@@ -17,7 +17,7 @@ services:
     volumes: 
       - .:/proyecto
     ports:
-      - '8000:8000'
+      - '8000'
     depends_on:
       - db
     networks:
@@ -29,7 +29,7 @@ services:
       PMA_USER: root
       PMA_PASSWORD: '12345'
     ports:
-      - '8000:8000'
+      - '8000'
     depends_on:
       - db
     networks:
