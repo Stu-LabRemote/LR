@@ -20,10 +20,15 @@
             <div class="card-header text-center">
                 <a href="#" class="h1" style="color:#007bff" ><b>Uniajc</b>LABS</a>
             </div>
+
+
             <div class="card-body">
                 <p class="login-box-msg">iniciar tu sesión.</p>
-                <form action="#" method="post">
+                <form action="" method="post">
 
+                    {% csrf_token %}
+                    {{ form }}
+                    
                     <div class="input-group mb-3">
                         <input type="email" class="form-control" placeholder="Correo Elecetronico">
                         <div class="input-group-append">
@@ -54,7 +59,7 @@
                     </div>
 
                     <div class="col text-center">
-                        <a href="/page1/home" type="submit" class="btn btn-primary btn-block">Acceder</a> 
+                        <button type="submit" class="btn btn-primary btn-block">Acceder</button> 
                     </div>
                     
                 </form>
@@ -68,6 +73,8 @@
                     <p class="text-center">¿No tienes una cuenta?<a href="/user/registro" class="text-center"> Registrate</a>
                 </p>
             </div>
+
+
         </div>
     </div>
     <script src="{% static 'lib/adminlte-3.0.4/plugins/jquery/jquery.min.js' %}"></script>

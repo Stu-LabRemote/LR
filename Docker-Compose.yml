@@ -1,10 +1,10 @@
 version: '3'
 services:
   db:
-    image: jha15/mysql
     build:
       context: .
       dockerfile: Dockerfile.mysql
+    image: jha15/mysql
     ports:
       - "3306:3306"
     networks:
@@ -32,10 +32,10 @@ services:
       - mynet
 
   phpmyadmin:
-    image: jha15/phpmyadmin
     build:
       context: .
       dockerfile: Dockerfile.phpmyadmin
+    image: jha15/phpmyadmin
     ports:
       - "8080:80"
     depends_on:
@@ -44,10 +44,10 @@ services:
       - mynet
 
   node-red:
-    image: jha15/node-red
     build:
       context: .
       dockerfile: Dockerfile.node-red
+    image: jha15/node-red
     ports:
       - "1880:1880"
     volumes:
