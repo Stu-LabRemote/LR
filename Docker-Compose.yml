@@ -35,16 +35,5 @@ services:
     networks:
       - mynet
 
-
-  node-red:
-    image: nodered/node-red
-    ports:
-      - '8000:8000'
-    volumes:
-      - ./node-red-data:/data
-    networks:
-      - mynet
-
-
 networks:
   mynet:
