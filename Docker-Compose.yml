@@ -1,37 +1,57 @@
 version: '3'
 services:
   db:
-    image: mysql:latest
-    environment:
-      MYSQL_ROOT_PASSWORD: '12345'
-      MYSQL_DATABASE: root
-      MYSQL_PASSWORD: '12345'
+    build:
+      context: .
+      dockerfile: Dockerfile.mysql
+    image: jha15/mysql
     ports:
-      - '8000'
+      - "3306:3306"
     networks:
       - mynet
 
   web:
     build: .
+    image: jha15/web
     command: python manage.py runserver 0.0.0.0:8000
+    environment:
+      - DEBUG=true
+      - DJANGO_DB_ENGINE=mysql
+      - DJANGO_DB_NAME=root
+      - DJANGO_DB_USER=root
+      - DJANGO_DB_PASSWORD=12345
+      - DJANGO_DB_HOST=db
+      - DJANGO_DB_PORT=3306
     volumes: 
       - .:/proyecto
     ports:
-      - '8000'
+      - '8000:8000'
     depends_on:
       - db
     networks:
       - mynet
 
   phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    environment:
-      PMA_USER: root
-      PMA_PASSWORD: '12345'
+    build:
+      context: .
+      dockerfile: Dockerfile.phpmyadmin
+    image: jha15/phpmyadmin
     ports:
-      - '8000'
+      - "8080:80"
     depends_on:
       - db
+    networks:
+      - mynet
+
+  node-red:
+    build:
+      context: .
+      dockerfile: Dockerfile.node-red
+    image: jha15/node-red
+    ports:
+      - "1880:1880"
+    volumes:
+      - ./node-red-data:/data
     networks:
       - mynet
 
